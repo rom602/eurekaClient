@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: CLIENT-SERVICE
+server:
+  port: ${PORT:8081}
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${SEQUENCE_NO}
+  client:
+    service-url:
+
+#spring:
+#  cloud:
+#    inetutils:
+#      ignored-interfaces:
+#        - eth1*
+
+#eureka:
+#  client:
+#    registry-fetch-interval-seconds: 3
+#    disable-delta: true
+
