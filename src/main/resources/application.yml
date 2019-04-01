@@ -1,40 +1,40 @@
-spring:
-  application:
-    name: CLIENT-SERVICE
-server:
-  port: ${PORT:8081}
-  ssl:
-    key-store: classpath:keystore.p12
-    key-store-password: 123456
-    key-store-type: PKCS12
-    key-alias: client
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://admin:admin123@localhost:8761
-    healthcheck:
-      enabled: true
-    registerWithEureka: false
-  instance:
-    hostname: localhost
-    secure-port-enabled: true
-    non-secure-port-enabled: false
-    status-page-url: https://${eureka.instance.hostname}:${server.port}/actuator/info
-    health-check-url: https://${eureka.instance.hostname}:${server.port}/actuator/health
-    home-page-url: https://${eureka.instance.hostname}:${server.port}/actuator
 #spring:
-#  cloud:
-#    inetutils:
-#      ignored-interfaces:
-#        - eth1*
-
+#  application:
+#    name: CLIENT-SERVICE
+#server:
+#  port: ${PORT:8081}
+#  ssl:
+#    key-store: classpath:keystore.p12
+#    key-store-password: 123456
+#    key-store-type: PKCS12
+#    key-alias: client
 #eureka:
 #  client:
-#    registry-fetch-interval-seconds: 3
-#    disable-delta: true
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, metrics, shutdown
+#    serviceUrl:
+#      defaultZone: http://localhost:8760/eureka/
+#    healthcheck:
+#      enabled: true
+#    registerWithEureka: false
+#  instance:
+#    hostname: localhost
+#    secure-port-enabled: true
+#    non-secure-port-enabled: false
+#    status-page-url: https://${eureka.instance.hostname}:${server.port}/actuator/info
+#    health-check-url: https://${eureka.instance.hostname}:${server.port}/actuator/health
+#    home-page-url: https://${eureka.instance.hostname}:${server.port}/actuator
+##spring:
+##  cloud:
+##    inetutils:
+##      ignored-interfaces:
+##        - eth1*
+#
+##eureka:
+##  client:
+##    registry-fetch-interval-seconds: 3
+##    disable-delta: true
+#
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health, info, metrics, shutdown
