@@ -3,7 +3,7 @@ package com.wari.eurekaClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class LoadBalancedRestTemplateConfiguration {
@@ -12,7 +12,7 @@ public class LoadBalancedRestTemplateConfiguration {
     // 예제에서는 RestTemplate 인스턴스에 @LoadBalanced 애노테이션을 붙여서 로드밸런싱 인터셉터를 설정한다.
     @Bean
     @LoadBalanced
-    WebClient webClient() {
-        return WebClient.builder().build();
+    RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }
